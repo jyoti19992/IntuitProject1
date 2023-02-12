@@ -1,0 +1,64 @@
+.displayBlocked {
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+}
+.displaySelect {
+  color: white;
+  background-color: orange;
+  padding: 10px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  color: Black;
+  box-shadow: 1rem 1rem 1rem grey;
+  overflow: hidden;
+  object-fit: cover;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card:hover {
+  transform: rotate(0.5deg) skewX(-1deg);
+  box-shadow: 2rem 2rem 2rem black;
+}
+.buttonDisabled {
+  color: white;
+  background-color: grey;
+  padding: 10px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonSelected {
+  color: white;
+  background-color: orange;
+  padding: 10px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonEvent {
+  color: white;
+  background-color: dodgerBlue;
+  padding: 10px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* @media only screen and (min-width: 200px) and (max-width: 767px) {
+  .card {
+    color: Black;
+    box-shadow: 1rem 1rem 1rem grey;
+    overflow: hidden;
+    object-fit: cover;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+} */
