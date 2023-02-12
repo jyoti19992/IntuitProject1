@@ -9,7 +9,7 @@ class MainContainer extends React.Component {
     this.state = {
       allEvents: [],
       selectedEvents: [],
-      conflictEvents: []
+      conflictEvents: [],
     };
   }
 
@@ -59,7 +59,7 @@ class MainContainer extends React.Component {
   selectEvents = (id) => {
     let { allEvents, selectedEvents } = this.state;
     let tempEvent;
-    allEvents.forEach((event, idx) => {
+    allEvents.forEach((event) => {
       if (id === event.id) {
         tempEvent = event;
       }
@@ -69,7 +69,7 @@ class MainContainer extends React.Component {
       swal({
         title: "This event conflicts with another selected event.",
         icon: "warning",
-        dangerMode: true
+        dangerMode: true,
       });
       return;
     }
@@ -77,7 +77,7 @@ class MainContainer extends React.Component {
       swal({
         title: "You can only select a maximum of 3 events.",
         icon: "warning",
-        dangerMode: true
+        dangerMode: true,
       });
       return;
     }
@@ -85,7 +85,7 @@ class MainContainer extends React.Component {
     this.setState(
       {
         allEvents: allEvents,
-        selectedEvents: [...selectedEvents, tempEvent]
+        selectedEvents: [...selectedEvents, tempEvent],
       },
       () => this.updateConflicts()
     );
@@ -104,7 +104,7 @@ class MainContainer extends React.Component {
     this.setState(
       {
         allEvents: [...allEvents, tempEvent],
-        selectedEvents: selectedEvents
+        selectedEvents: selectedEvents,
       },
       () => this.updateConflicts()
     );
@@ -119,7 +119,7 @@ class MainContainer extends React.Component {
           padding: "16px",
           display: "flex",
           height: "fit-content",
-          backgroundColor: "#f2e4f2"
+          backgroundColor: "#f2e4f2",
         }}
       >
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
@@ -127,19 +127,19 @@ class MainContainer extends React.Component {
             class="box"
             style={{
               border: "solid black",
-              height: "fit-content"
+              height: "fit-content",
+              paddingBottom: "15px"
             }}
           >
             <h1
               style={{
                 fontSize: "3rem",
-
                 fontWeight: "560",
                 color: "black",
                 textTransform: "capitalize",
                 letterSpacing: "0.5rem",
                 textShadow: ".3rem .0rem .3rem grey",
-                paddingLeft: "25%"
+                paddingLeft: "25%",
               }}
             >
               All Events
@@ -154,7 +154,7 @@ class MainContainer extends React.Component {
           <div
             style={{
               border: "solid black",
-              height: "220vh"
+              height: "220vh",
             }}
           >
             <h1
@@ -165,7 +165,7 @@ class MainContainer extends React.Component {
                 textTransform: "capitalize",
                 letterSpacing: "0.5rem",
                 textShadow: ".3rem .3rem .3rem",
-                paddingLeft: "25%"
+                paddingLeft: "25%",
               }}
             >
               Selected Events

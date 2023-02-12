@@ -18,10 +18,10 @@ class EventContainer extends React.Component {
           flexWrap: "wrap",
           justifyContent: "space-evenly",
           rowGap: "1rem",
-          height: "fit-content"
+          height: "fit-content",
         }}
       >
-        {events.map((event, idx) => (
+        {events.map((event) => (
           <CardBox
             key={event.id}
             event={event}
