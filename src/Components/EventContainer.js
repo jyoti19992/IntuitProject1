@@ -11,16 +11,7 @@ class EventContainer extends React.Component {
     const { events } = this.props;
 
     return (
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          rowGap: "1rem",
-          height: "fit-content",
-        }}
-      >
+      <div className="eventContainer">
         {events.map((event) => (
           <CardBox
             key={event.id}

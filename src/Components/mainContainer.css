@@ -1,0 +1,35 @@
+.heading {
+  font-size: 3rem;
+  font-weight: 900;
+  color: black;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  padding-left: 25%;
+}
+.container {
+  border: solid black;
+  padding: 16px;
+  display: flex;
+  height: fit-content;
+  background-color: grey;
+}
+.divContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.gridContainer {
+  border: solid black;
+  height: 1100px;
+  padding-bottom: 15px;
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+.eventContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 1rem;
+  height: fit-content;
+}
