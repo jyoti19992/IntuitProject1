@@ -119,7 +119,7 @@ class MainContainer extends React.Component {
           padding: "16px",
           display: "flex",
           height: "fit-content",
-          backgroundColor: "#f2e4f2",
+          backgroundColor: "grey",
         }}
       >
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
@@ -134,11 +134,10 @@ class MainContainer extends React.Component {
             <h1
               style={{
                 fontSize: "3rem",
-                fontWeight: "560",
+                fontWeight: "900",
                 color: "black",
                 textTransform: "capitalize",
                 letterSpacing: "0.5rem",
-                textShadow: ".3rem .0rem .3rem grey",
                 paddingLeft: "25%",
               }}
             >
@@ -165,7 +164,6 @@ class MainContainer extends React.Component {
                 color: "black",
                 textTransform: "capitalize",
                 letterSpacing: "0.5rem",
-                textShadow: ".3rem .3rem .3rem",
                 paddingLeft: "25%",
               }}
             >
