@@ -36,7 +36,7 @@
 }
 .buttonSelected {
   color: white;
-  background-color: orange !important;
+  background-color: darkblue !important;
   padding: 10px;
   font-family: Arial;
   display: flex;
@@ -44,11 +44,21 @@
 }
 .buttonEvent {
   color: white;
-  background-color: dodgerBlue;
+  background-color: red !important;
   padding: 10px;
   font-family: Arial;
   display: flex;
   justify-content: flex-end;
+}
+.cardTypoSelected {
+  color: darkblue;
+  font-size: 50 !important;
+  height: "30px";
+}
+.cardTypoAll {
+  color: red;
+  font-weight: 50 !important;
+  height: "30px";
 }
 
 @media only screen and (min-width: 200px) and (max-width: 767px) {
