@@ -35,13 +35,17 @@ class CardBox extends React.Component {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <CardContent sx={{ width: 40 }}>
-              <Typography sx={{ fontSize: 30 }} color="black">
+              <Typography
+                sx={{ fontSize: 50, height: "30px" }}
+                color={label === "SELECT" ? "red" : "darkblue"}
+              >
                 {event.event_category[0]}
               </Typography>
             </CardContent>
             <CardContent
               style={{
-                borderLeft: "2px solid red",
+                borderLeft:
+                  label === "SELECT" ? "2px solid red" : "2px solid darkblue",
                 height: "70%",
               }}
             ></CardContent>
@@ -57,7 +61,10 @@ class CardBox extends React.Component {
                 <Typography sx={{ fontSize: 25 }} color="black" gutterBottom>
                   {event.event_name}
                 </Typography>
-                <Typography sx={{ fontSize: 11 }} color="red">
+                <Typography
+                  sx={{ fontSize: 11 }}
+                  color={label === "SELECT" ? "red" : "darkblue"}
+                >
                   ({event.event_category})
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: 18 }}>
