@@ -124,11 +124,11 @@ class MainContainer extends React.Component {
       >
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
           <div
-            class="box"
             style={{
               border: "solid black",
-              height: "fit-content",
-              paddingBottom: "15px"
+              height: "1000px",
+              paddingBottom: "15px",
+              marginRight: "5px",
             }}
           >
             <h1
@@ -154,7 +154,8 @@ class MainContainer extends React.Component {
           <div
             style={{
               border: "solid black",
-              height: "220vh",
+              height: "1000px",
+              paddingBottom: "15px",
             }}
           >
             <h1
