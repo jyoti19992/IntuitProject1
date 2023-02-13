@@ -24,11 +24,11 @@
 }
 .card:hover {
   transform: rotate(0.5deg) skewX(-1deg);
-  box-shadow: 2rem 2rem 2rem black;
+  box-shadow: 2rem 2rem 2rem grey;
 }
 .buttonDisabled {
   color: white;
-  background-color: grey;
+  background-color: grey !important;
   padding: 10px;
   font-family: Arial;
   display: flex;
@@ -36,7 +36,7 @@
 }
 .buttonSelected {
   color: white;
-  background-color: orange;
+  background-color: orange !important;
   padding: 10px;
   font-family: Arial;
   display: flex;
@@ -51,7 +51,7 @@
   justify-content: space-evenly;
 }
 
-/* @media only screen and (min-width: 200px) and (max-width: 767px) {
+@media only screen and (min-width: 200px) and (max-width: 767px) {
   .card {
     color: Black;
     box-shadow: 1rem 1rem 1rem grey;
@@ -61,4 +61,4 @@
     white-space: nowrap;
     flex-direction: column;
   }
-} */
+}
