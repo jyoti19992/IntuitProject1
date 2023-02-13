@@ -40,7 +40,7 @@
   padding: 10px;
   font-family: Arial;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 .buttonEvent {
   color: white;
@@ -48,7 +48,7 @@
   padding: 10px;
   font-family: Arial;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 767px) {

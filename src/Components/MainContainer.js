@@ -126,7 +126,7 @@ class MainContainer extends React.Component {
           <div
             style={{
               border: "solid black",
-              height: "1000px",
+              height: "1100px",
               paddingBottom: "15px",
               marginRight: "5px",
             }}
@@ -153,7 +153,7 @@ class MainContainer extends React.Component {
           <div
             style={{
               border: "solid black",
-              height: "1000px",
+              height: "1100px",
               paddingBottom: "15px",
             }}
           >
