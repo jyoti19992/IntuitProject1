@@ -1,74 +1,29 @@
-.displayBlocked {
-  background-color: grey;
-  color: white;
-  padding: 10px;
-  font-family: Arial;
-  display: flex;
-  justify-content: space-evenly;
-}
-.displaySelect {
-  color: white;
-  background-color: orange;
-  padding: 10px;
-  font-family: Arial;
-  display: flex;
-  justify-content: space-evenly;
-}
-.card {
-  color: Black;
-  box-shadow: 1rem 1rem 1rem grey;
-  overflow: hidden;
-  object-fit: cover;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.card:hover {
-  transform: rotate(0.5deg) skewX(-1deg);
-  box-shadow: 2rem 2rem 2rem grey;
-}
-.buttonDisabled {
-  color: white;
-  background-color: grey !important;
-  padding: 10px;
-  font-family: Arial;
-  display: flex;
-  justify-content: space-evenly;
-}
-.buttonSelected {
-  color: white;
-  background-color: darkblue !important;
-  padding: 10px;
-  font-family: Arial;
-  display: flex;
-  justify-content: flex-end;
+card {
+  margin: 20px;
 }
 .buttonEvent {
-  color: white;
   background-color: red !important;
-  padding: 10px;
-  font-family: Arial;
-  display: flex;
-  justify-content: flex-end;
+  color: white;
 }
-.cardTypoSelected {
-  color: darkblue;
-  font-size: 50 !important;
-  height: "30px";
+.buttonSelected {
+  background-color: darkblue !important;
+  color: white;
 }
-.cardTypoAll {
-  color: red;
-  font-weight: 50 !important;
-  height: "30px";
+.buttonDisabled {
+  background-color: lightgrey !important;
+  color: white;
+  cursor: not-allowed;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .card {
-    color: Black;
-    box-shadow: 1rem 1rem 1rem grey;
-    overflow: hidden;
-    object-fit: cover;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .card .cardContent {
+    font-size: 15px;
+  }
+  .card .cardContent .Typography {
+    font-size: 20px;
   }
 }

@@ -2,6 +2,7 @@ import * as React from "react";
 import EventContainer from "./EventContainer";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
+import "./mainContainer.css";
 
 class MainContainer extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class MainContainer extends React.Component {
       allEvents: [],
       selectedEvents: [],
       conflictEvents: [],
+      dataLoading: true
     };
   }
 
@@ -23,7 +25,7 @@ class MainContainer extends React.Component {
       .then(
         (response) => {
           var result = response.data;
-          this.setState({ allEvents: result });
+          this.setState({ allEvents: result, dataLoading: false });
         },
         (error) => {
           console.log(error);
@@ -73,6 +75,7 @@ class MainContainer extends React.Component {
       });
       return;
     }
+    //  user can only select  maximum of 3 events.
     if (selectedEvents.length >= 3) {
       swal({
         title: "You can only select a maximum of 3 events.",
@@ -113,36 +116,10 @@ class MainContainer extends React.Component {
     const { allEvents, selectedEvents, conflictEvents } = this.state;
 
     return (
-      <div
-        style={{
-          border: "solid black",
-          padding: "16px",
-          display: "flex",
-          height: "fit-content",
-          backgroundColor: "grey",
-        }}
-      >
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-          <div
-            style={{
-              border: "solid black",
-              height: "1100px",
-              paddingBottom: "15px",
-              marginRight: "5px",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "3rem",
-                fontWeight: "900",
-                color: "black",
-                textTransform: "capitalize",
-                letterSpacing: "0.5rem",
-                paddingLeft: "25%",
-              }}
-            >
-              All Events
-            </h1>
+      <div className="container">
+        <div className="divContainer">
+          <div className="gridContainer">
+            <h1 className="heading">All Events</h1>
             <EventContainer
               events={allEvents}
               conflict={conflictEvents}
@@ -150,25 +127,8 @@ class MainContainer extends React.Component {
               button="SELECT"
             />
           </div>
-          <div
-            style={{
-              border: "solid black",
-              height: "1100px",
-              paddingBottom: "15px",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "3rem",
-                fontWeight: "900",
-                color: "black",
-                textTransform: "capitalize",
-                letterSpacing: "0.5rem",
-                paddingLeft: "25%",
-              }}
-            >
-              Selected Events
-            </h1>
+          <div className="gridContainer">
+            <h1 className="heading">Selected Events</h1>
             <EventContainer
               events={selectedEvents}
               clickHandler={this.removeEvents}
