@@ -16,13 +16,15 @@
   border: solid black;
   padding: 16px;
   display: flex;
-  height: fit-content;
+  height: 100% !important;
   background-color: #dcddde;
+  overflow: auto;
 }
 .divContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  overflow: auto;
 }
 .gridContainer {
   border: solid black;
@@ -30,6 +32,7 @@
   padding-bottom: 15px;
   margin-right: 2.5px;
   margin-left: 2.5px;
+  overflow: auto;
 }
 .eventContainer {
   width: 100%;
