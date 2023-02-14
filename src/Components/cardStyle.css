@@ -12,6 +12,9 @@ card {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.cardMain {
+  width: 45%;
+}
 
 .card:hover {
   transform: rotate(0.5deg) skewX(-1deg);
@@ -32,7 +35,7 @@ card {
   cursor: not-allowed;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .card {
     width: 90%;
     margin: 20px auto;
@@ -42,5 +45,8 @@ card {
   }
   .card .cardContent .Typography {
     font-size: 20px;
+  }
+  .cardMain {
+    width: 90%;
   }
 }

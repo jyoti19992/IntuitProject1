@@ -17,9 +17,9 @@ class CardBox extends React.Component {
     return (
       <div
         style={{
-          width: "45%",
           float: index === 0 ? "left" : "right",
         }}
+        className="cardMain"
       >
         <Card
           className="card"
