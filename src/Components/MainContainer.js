@@ -3,6 +3,7 @@ import EventContainer from "./EventContainer";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
 import "./mainContainer.css";
+import moment from "moment";
 
 class MainContainer extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class MainContainer extends React.Component {
       allEvents: [],
       selectedEvents: [],
       conflictEvents: [],
-      dataLoading: true
+      dataLoading: true,
     };
   }
 
@@ -25,12 +26,27 @@ class MainContainer extends React.Component {
       .then(
         (response) => {
           var result = response.data;
+          result.sort((a, b) => {
+            return (
+              this.getDurationToSeconds(a.start_time) -
+              this.getDurationToSeconds(b.start_time)
+            );
+          });
           this.setState({ allEvents: result, dataLoading: false });
         },
         (error) => {
           console.log(error);
         }
       );
+  };
+
+  getDurationToSeconds = (input) => {
+    const timeFormat = "YYYY-MM-DD HH:mm:ss"; // adjust to match the input format
+    const referenceTime = moment(input, timeFormat).startOf("day");
+    const duration = moment.duration(
+      moment(input, timeFormat).diff(referenceTime)
+    );
+    return duration.asSeconds();
   };
 
   updateConflicts = () => {
@@ -85,10 +101,14 @@ class MainContainer extends React.Component {
       return;
     }
     allEvents.splice(allEvents.indexOf(tempEvent), 1);
+    let sortedEvents = [...selectedEvents, tempEvent];
+    sortedEvents.sort((a, b) => {
+      return a.start_time - b.start_time;
+    });
     this.setState(
       {
         allEvents: allEvents,
-        selectedEvents: [...selectedEvents, tempEvent],
+        selectedEvents: sortedEvents,
       },
       () => this.updateConflicts()
     );
@@ -103,10 +123,18 @@ class MainContainer extends React.Component {
         selectedEvents.splice(idx, 1);
       }
     });
-
+    // Add the removed event back to the allEvents array at the correct position
+    const insertIndex = allEvents.findIndex((event) => {
+      return event.start_time > tempEvent.start_time;
+    });
+    const updatedAllEvents = [
+      ...allEvents.slice(0, insertIndex),
+      tempEvent,
+      ...allEvents.slice(insertIndex),
+    ];
     this.setState(
       {
-        allEvents: [...allEvents, tempEvent],
+        allEvents: updatedAllEvents,
         selectedEvents: selectedEvents,
       },
       () => this.updateConflicts()

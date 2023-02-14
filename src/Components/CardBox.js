@@ -36,7 +36,7 @@ class CardBox extends React.Component {
           >
             <CardContent sx={{ width: 40 }}>
               <Typography
-                sx={{ fontSize: 50, height: "30px" }}
+                sx={{ fontSize: 50, height: "58px", alignItems: "center" }}
                 color={label === "SELECT" ? "red" : "darkblue"}
               >
                 {event.event_category[0]}
